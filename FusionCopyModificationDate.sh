@@ -10,16 +10,16 @@
 #
 # Optionally renames stiched files with original date in the filename 
 # 
-# Usage: GoProCopyModificationDate.sh renderedFilesDir/ 100GFRNT/ 
+# Usage: FusionCopyModificationDate.sh renderedFilesDir/ 100GFRNT/ 
 
  #!/bin/bash
 
 if [ "$1" == "" ] || [ "$2" == "" ]; then
-    echo $'Missing arguments.\nUsage: GoProCopyModificationDate.sh renderedFilesDir/ 100GFRNT/\n'
+    echo $'Missing arguments.\nUsage: FusionCopyModificationDate.sh renderedFilesDir/ 100GFRNT/\n'
     exit 1
 fi
 if [ "$3" != "" ]; then
-    echo $'Too many arguments.\nUsage: GoProCopyModificationDate.sh renderedFilesDir/ 100GFRNT/\n'
+    echo $'Too many arguments.\nUsage: FusionCopyModificationDate.sh renderedFilesDir/ 100GFRNT/\n'
     exit 1
 fi
 
