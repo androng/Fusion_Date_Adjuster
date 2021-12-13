@@ -1,15 +1,34 @@
 
-# GoPro Fusion Video File Date Adjuster
+# GoPro Fusion/Max Video File Date Adjuster
 Modifies the modification date of the stitched GoPro video files to match the time they were taken, not the time that they were stitched. This makes these videos group together on the same date with the GoPro photos in Google Photos. (GoPro Fusion Studio saves "Date taken" for photos. Fusion Studio doesn't preserve "Date taken" for videos.)  
  
 Takes date from unstitched files with names like GPFR0089.MP4 and changes the date on stitched files with names like VIDEO_0089.mp4
 
 Optionally renames stiched files with original date in the filename. Just uncomment the line in the script. 
 
- 
+Files Before: 
+    
+    folderWith360Files/GS010010.360 
+    Date Taken: 2021-12-03 19:23:40
+
+    encodedFilesDir/GS010010.mp4 
+    Date created:  2021-12-11 21:23:29
+    Date modified: 2021-12-11 21:23:29
+
+File after: 
+   
+    folderWith360Files/GS010010.360  <-- Not changed
+    Date Taken: 2021-12-03 19:23:40  <-- Not changed
+
+    encodedFilesDir/MAX_2021-12-08_18-37-42.mp4 <-- changed 
+    Date created:  2021-12-03 19:23:40   <-- not changed on Windows, changed on macOS
+    Date modified: 2021-12-03 19:23:40   <-- changed
+
+
+
  ## Usage
  
-     GoProCopyModificationDate.sh renderedFilesDir/ 100GFRNT/ 
+     MaxCopyModifyDate.sh renderedFilesDir/ 100GFRNT/ 
 
 ## Sample output 
 
@@ -29,6 +48,7 @@ Optionally renames stiched files with original date in the filename. Just uncomm
     touch -t 201808311600.51 ./VIDEO_0118.mp4
 
 Tested on /bin/bash on macOS 10.13.6 
+Tested on Windows with Git bash
 ## Known issues
 
 + Doesn't work if your directory has spaces in it 
